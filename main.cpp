@@ -34,7 +34,7 @@ void philosopher(int id) {
         forks[left_fork].lock();//filozof zabiera lewy widelec
 
 
-        if(forks[right_fork].try_lock()) {/
+        if(forks[right_fork].try_lock()) {
         }else{
             forks[left_fork].unlock();
             while(!forks[left_fork].try_lock() && !forks[right_fork].try_lock()){
